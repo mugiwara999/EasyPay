@@ -1,6 +1,6 @@
 # EasyPay
 
-A payTm clone made using ReactJs, MongoDB, ExpressJS, NodeJs, Tailwind
+A PayTm clone made using ReactJs, MongoDB, ExpressJS, NodeJs, Tailwind
 
 It allows user to 
 1. Sign-up
