@@ -1,9 +1,9 @@
-import { model, Schema } from "mongoose";
 
 
+const mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://rahulkoyye123:xDHYewYfyCcF4qIE@cluster0.zyw27.mongodb.net/easyPay");
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -32,12 +32,9 @@ const userSchema = new Schema({
   }
 });
 
-const User = model("User", userSchema);
-
-
-const accountSchema = mongoose.Schema({
+const accountSchema = new mongoose.Schema({
   userId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId, // Reference to User model
     ref: 'User',
     required: true
   },
@@ -48,6 +45,7 @@ const accountSchema = mongoose.Schema({
 });
 
 const Account = mongoose.model('Account', accountSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = {
   User,
