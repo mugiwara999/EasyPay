@@ -1,23 +1,26 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
       <header className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           <h1 className="text-2xl font-bold text-blue-900">EasyPay</h1>
-          <div className="flex gap-4">
-            <a
-              href="/signin"
-              className="inline-flex h-10 items-center justify-center rounded-md px-6 text-sm font-medium text-blue-600 transition-colors hover:bg-blue-50 border border-blue-600"
-            >
-              Sign In
-            </a>
-            <a
-              href="/signup"
-              className="inline-flex h-10 items-center justify-center rounded-md px-6 text-sm font-medium text-white transition-colors bg-blue-600 hover:bg-blue-700"
+          <div className=" gap-4  flex">
+            <div onClick={(e) => {
+              navigate("/signin")
+            }} className="h-10 cursor-pointer  inline-flex items-center justify-center  rounded-md px-6 text-sm font-medium text-blue-600 transition-colors hover:bg-blue-50 border border-blue-600">
+              Sign In </div>
+            <div onClick={(e) => {
+              navigate("/signup")
+
+            }}
+              className="inline-flex h-10 items-center cursor-pointer justify-center rounded-md px-6 text-sm font-medium text-white transition-colors bg-blue-600 hover:bg-blue-700"
             >
               Sign Up
-            </a>
+            </div>
           </div>
         </nav>
       </header>
@@ -33,20 +36,15 @@ export default function Home() {
                 any hassle. Join millions of satisfied users who trust us with their payments.
               </p>
             </div>
-            <div className="flex gap-4">
-              <a
-                href="/signup"
-                className="inline-flex h-12 items-center justify-center rounded-md px-8 text-base font-medium text-white transition-colors bg-blue-600 hover:bg-blue-700"
-              >
-                Get Started
-              </a>
+            <div className="flex gap-4 inline-flex h-12 items-center justify-center rounded-md px-8 text-base font-medium text-white transition-colors bg-blue-600 hover:bg-blue-700">
+              Get Started
             </div>
           </div>
         </div>
 
         {/* Features Section */}
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="p-6 rounded-lg bg-white shadow-lg">
+          <div className="p-6 rounde-lg bg-white shadow-lg">
             <h3 className="text-xl font-semibold text-blue-900 mb-2">Instant Transfers</h3>
             <p className="text-gray-600">Send money anywhere in the world within seconds</p>
           </div>
@@ -60,7 +58,7 @@ export default function Home() {
           </div>
         </div>
       </main>
-    </div>
+    </div >
   )
 }
 
